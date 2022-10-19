@@ -1,0 +1,3 @@
+# Strategy-Tradingview
+
+Scriptlongshort tradingview
