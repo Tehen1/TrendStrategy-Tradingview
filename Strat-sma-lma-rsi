@@ -49,14 +49,14 @@ offset = input.int(0, "Offset", minval = -500, maxval = 500)
 // ---------------------------------------------
 // --------------- STRATEGY --------------------
 
-if use_longs
+if inDateRange
     open_long = dir < 0 and sma > lma and close > sma and rsi1 > 35
     close_long = (dir > 0 or sma < lma) and close < sma and rsi1 > 30 and strategy.position_size > 0 
 
     strategy.entry('entry_long', strategy.long, limit=sma, when=open_long)
     strategy.exit('close_long', limit=sma, when=close_long)
 
-if use_short
+if  inDateRange
     open_short = dir > 0 and sma < lma and close < sma and rsi1 < 55
     close_short = (dir < 0 or sma > lma) and close > sma and  rsi1 < 65 and strategy.position_size < 0  
 
